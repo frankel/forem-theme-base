@@ -2,7 +2,8 @@ $light-bg1: #eee;
 $mid-bg1: #bbb;
 $mid-bg1-highlight: #aaa;
 $bar1-topbg: #eee;
-$bar1-midbg: #bbb;
+$bar1-midbg: #D8CCBE;
+$bar1-splitterbg: #FBFBE8;
 $bar1-bottombg: #aaa;
 $lighter-text: #777;
 $visited-text: #333;
@@ -19,8 +20,26 @@ body{
 
 #forums {
   .title {
-    font-size: 175%;
+    font-size: 155%;
   }
+  .description{
+	margin:5px 0;
+  }
+  .forum_header{}
+  .topic_header{width: 10%;}
+  .post_header{width: 10%;}
+  .splitter{
+	height:18px;
+	background:$bar1-splitterbg;
+	
+  }
+  td{
+	border-top:none;
+	border-bottom:none;
+  }
+
+  .odd{	background-color: #fff;}
+  .even{	background-color: #fff;}
 }
 
 #forum{
@@ -37,7 +56,7 @@ body{
   menu{
     padding-left: 0;
     a{
-      background-color: $bar1-midbg;
+/*      background-color: $bar1-midbg;
       padding: .5em;
       display: inline-block;
       color: $default-text;
@@ -45,7 +64,7 @@ body{
       &:hover{
         background-color: $bar1-bottombg;
       }
-      margin: 0;
+      margin: 0;*/
     }
   }
 }
@@ -173,10 +192,11 @@ table.subdued{
   }
   td, th{
     padding: .5em;
+	padding-left:1em;
   }
   thead{
     th{
-      background-color: $bar1-midbg;
+      background-color: $bar1-splitterbg;
       font-weight: normal;
       text-align: left;
     }
@@ -234,4 +254,21 @@ table.subdued{
   height: 15px;
   background: transparent url(<%= asset_path('forem/pin_icon.png') %>) 0 0;
   display: inline-block;
+}
+
+.category{
+	border: 1px solid $bar1-midbg;
+	margin-bottom:20px;
+	h2{
+		background-color: $bar1-midbg;
+		font-size:18px;
+		padding-left:10px;
+	}
+	table{
+		margin-bottom:0px;
+	}
+}
+
+.forum{
+	
 }
